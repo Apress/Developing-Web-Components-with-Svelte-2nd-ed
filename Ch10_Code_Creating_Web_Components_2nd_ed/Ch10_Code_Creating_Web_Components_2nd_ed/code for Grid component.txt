@@ -1,0 +1,18 @@
+import { axe } from "vitest-axe";
+import * as AxeMatchers from "vitest-axe/matchers";
+
+const GridHTML = `<div class="garnet-grid s--9EA4qNh9tr7"><div class="s--9EA4qNh9tr7" style="grid-template-rows: repeat(4, 1fr); grid-template-columns: repeat(1, auto); border: none;"><div class="cell s-wR0iEIfZdiFJ"></div><!--<Cell>--><div class="cell s-wR0iEIfZdiFJ"></div><!--<Cell>--><div class="cell s-wR0iEIfZdiFJ"></div><!--<Cell>--><div class="cell s-wR0iEIfZdiFJ"></div><!--<Cell>--><div class="cell s-wR0iEIfZdiFJ"></div><!--<Cell>--><div class="cell s-wR0iEIfZdiFJ"></div><!--<Cell>--><div class="cell s-wR0iEIfZdiFJ"></div><!--<Cell>--><div class="cell s-wR0iEIfZdiFJ"></div><!--<Cell>--><div class="cell s-wR0iEIfZdiFJ"></div><!--<Cell>--><div class="cell s-wR0iEIfZdiFJ"></div><!--<Cell>--><div class="cell s-wR0iEIfZdiFJ"></div><!--<Cell>--><div class="cell s-wR0iEIfZdiFJ"></div><!--<Cell>--></div></div>`;
+expect.extend(AxeMatchers);
+
+test("should demonstrate no issues with accessibility", async () => {
+  const render = () => GridHTML;
+  const result = render();
+
+  const results = await axe(result, {
+    rules: {
+      region: { enabled: false },
+    },
+   });
+
+  expect(results).toHaveNoViolations();
+});

@@ -1,0 +1,18 @@
+import { axe } from "vitest-axe";
+import * as AxeMatchers from "vitest-axe/matchers";
+
+const SelectBoxHTML = `<div class="garnet-selectbox s-YBKB7XKMQi9t"><label for="garnet-selectbox" class="s-YBKB7XKMQi9t"><select data-testid="selectdropdown" title="garnet-selectbox" class="s-YBKB7XKMQi9t"><option value="1" class="s-YBKB7XKMQi9t">aaa </option><option value="2" class="s-YBKB7XKMQi9t">bbb </option><option value="3" class="s-YBKB7XKMQi9t">ccc </option><option value="4" class="s-YBKB7XKMQi9t">ddd </option></select> </label></div>`;
+expect.extend(AxeMatchers);
+
+test("should demonstrate no issues with accessibility", async () => {
+  const render = () => SelectBoxHTML;
+  const result = render();
+
+  const results = await axe(result, {
+    rules: {
+      region: { enabled: false },
+    },
+   });
+
+  expect(results).toHaveNoViolations();
+});

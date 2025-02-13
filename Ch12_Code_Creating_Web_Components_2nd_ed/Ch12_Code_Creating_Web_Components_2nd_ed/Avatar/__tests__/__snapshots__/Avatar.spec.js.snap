@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Tests for Avatar > get a snapshot of component 1`] = `"<div class="garnet-avatar svelte-1bg7u5z"><img src="/avatar.png" class="avatar-img svelte-1bg7u5z" alt="avatar">  <span data-testid="availability" class="base available smal svelte-1bg7u5z"></span></div>"`;

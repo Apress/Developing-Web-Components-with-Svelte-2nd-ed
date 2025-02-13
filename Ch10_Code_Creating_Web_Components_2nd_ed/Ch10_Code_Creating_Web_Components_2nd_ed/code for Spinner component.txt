@@ -1,0 +1,18 @@
+import { axe } from "vitest-axe";
+import * as AxeMatchers from "vitest-axe/matchers";
+
+const SpinnerHTML = `<div class="garnet s-9fyBjQp-X91z"><div class="s-9fyBjQp-X91z"><div class="circle s-9fyBjQp-X91z" style="--size: 40px; --color: #733635; --duration: 0.75s;"></div></div></div>`;
+expect.extend(AxeMatchers);
+
+test("should demonstrate no issues with accessibility", async () => {
+  const render = () => SpinnerHTML;
+  const result = render();
+
+  const results = await axe(result, {
+    rules: {
+      region: { enabled: false },
+    },
+   });
+
+  expect(results).toHaveNoViolations();
+});

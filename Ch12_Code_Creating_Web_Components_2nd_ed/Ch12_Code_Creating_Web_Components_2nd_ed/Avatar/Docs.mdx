@@ -1,0 +1,52 @@
+import { Canvas, Meta } from "@storybook/addon-docs";
+import { ArgTypes } from "@storybook/blocks";
+import * as AvatarStories from "./Avatar.stories";
+
+<Meta of={AvatarStories} />
+
+# Avatar
+
+Avatar is the primary component. It has four possible states.
+
+- [Default](#default)
+- [Busy](#busy)
+- [Away](#away)
+- [Unavailable](#unavailable)
+
+<a id="default" />
+
+## Default
+
+This is the initial version of the Avatar component.
+
+<Canvas of={AvatarStories.Default} />
+
+<a id="busy" />
+
+## Busy
+
+This variant displays the Avatar component styled with a red status.
+
+<Canvas of={AvatarStories.Busy} />
+
+<a id="away" />
+
+## Away
+
+This variant displays the Avatar component styled with a yellow status.
+
+<Canvas of={AvatarStories.Away} />
+
+<a id="unavailable" />
+
+## Unavailable
+
+This variant displays the Avatar component with a white status indicator.
+
+<Canvas of={AvatarStories.Unavailable} />
+
+## Properties of component
+
+Below is a list of arguments available for this component:
+
+<ArgTypes of={AvatarStories} />

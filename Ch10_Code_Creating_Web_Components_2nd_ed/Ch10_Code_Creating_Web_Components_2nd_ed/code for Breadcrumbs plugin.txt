@@ -1,0 +1,20 @@
+import { axe } from "vitest-axe";
+import * as AxeMatchers from "vitest-axe/matchers";
+
+const BreadcrumbsHTML = `<div class="garnet s-A_BFCwAXJd84"><ul class="breadcrumb s-A_BFCwAXJd84"><li class="s-A_BFCwAXJd84"> <a href="/" data-testid="breadcrumbLink" class="s-A_BFCwAXJd84">Dashboard</a> </li><li class="s-A_BFCwAXJd84"><span class="s-A_BFCwAXJd84">/</span> <a href="/reports" data-testid="breadcrumbLink" class="s-A_BFCwAXJd84">Annual reports</a> </li><li class="s-A_BFCwAXJd84"><span class="s-A_BFCwAXJd84">/</span> 2019 </li></ul></div>`;
+expect.extend(AxeMatchers);
+
+test("should demonstrate no issues with accessibility", async () => {
+  const render = () => BreadcrumbsHTML;
+  const result = render();
+
+  const results = await axe(result, {
+    rules: {
+      region: { enabled: false },
+    },
+   });
+
+  expect(results).toHaveNoViolations();
+});
+
+

@@ -1,0 +1,18 @@
+import { axe } from "vitest-axe";
+import * as AxeMatchers from "vitest-axe/matchers";
+
+const TooltipHTML = `<div class="tooltip s-UAv5UqhRPtrl"><div class="s-UAv5UqhRPtrl"><button aria-describedby="tooltip" type="button" class="trigger s-UAv5UqhRPtrl" data-testid="tooltipButton">?</button> <div aria-hidden="true" id="tooltip" role="tooltip" aria-label="more info" class="s-UAv5UqhRPtrl"></div></div></div>`;
+expect.extend(AxeMatchers);
+
+test("should demonstrate no issues with accessibility", async () => {
+  const render = () => TooltipHTML;
+  const result = render();
+
+  const results = await axe(result, {
+    rules: {
+      region: { enabled: false },
+    },
+   });
+
+  expect(results).toHaveNoViolations();
+});

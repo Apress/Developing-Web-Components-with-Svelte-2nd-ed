@@ -1,0 +1,18 @@
+import { axe } from "vitest-axe";
+import * as AxeMatchers from "vitest-axe/matchers";
+
+const TabsHTML = `<div class="garnet-tabs s-NPWaW4eOvB4v"><div class="container s-NPWaW4eOvB4v"><ul class="s-NPWaW4eOvB4v"><li class="active s-NPWaW4eOvB4v" data-testid="tabHeader"><span class="s-NPWaW4eOvB4v">Tab 1</span> </li><li class=" s-NPWaW4eOvB4v" data-testid="tabHeader"><span class="s-NPWaW4eOvB4v">Tab 2</span> </li><li class=" s-NPWaW4eOvB4v" data-testid="tabHeader"><span class="s-NPWaW4eOvB4v">Tab 3</span> </li></ul> <div class="content s-NPWaW4eOvB4v" data-testid="tabContent">Text 1</div></div></div>`;
+expect.extend(AxeMatchers);
+
+test("should demonstrate no issues with accessibility", async () => {
+  const render = () => TabsHTML;
+  const result = render();
+
+  const results = await axe(result, {
+    rules: {
+      region: { enabled: false },
+    },
+   });
+
+  expect(results).toHaveNoViolations();
+});

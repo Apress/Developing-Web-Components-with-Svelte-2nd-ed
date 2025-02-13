@@ -1,0 +1,18 @@
+import { axe } from "vitest-axe";
+import * as AxeMatchers from "vitest-axe/matchers";
+
+const SliderHTML = `<div class="garnet-slider s-owSWZ-X6GUc2"><div class="range-slider s-owSWZ-X6GUc2"><label for="sliderChoice" class="s-owSWZ-X6GUc2">Text:</label> <input type="range" id="sliderChoice" min="0" max="100" step="1" name="sliderChoice" class="s-owSWZ-X6GUc2"> </div> <div class="selectedValue s-owSWZ-X6GUc2">Value: 50</div></div>`;
+expect.extend(AxeMatchers);
+
+test("should demonstrate no issues with accessibility", async () => {
+  const render = () => SliderHTML;
+  const result = render();
+
+  const results = await axe(result, {
+    rules: {
+      region: { enabled: false },
+    },
+   });
+
+  expect(results).toHaveNoViolations();
+});

@@ -1,0 +1,20 @@
+import { axe } from "vitest-axe";
+import * as AxeMatchers from "vitest-axe/matchers";
+
+const AccordionHTML = `<div class="garnet-accordion s-zJ3CIJSsBGcs"><button aria-expanded="false" class="accordionItem s-3L_PBfp3fhj2"><svg width="20" height="20" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="s-3L_PBfp3fhj2"><path d="M9 5l7 7-7 7" class="s-3L_PBfp3fhj2"></path></svg> Heading 1</button> <!--<AccordionItem>--><button aria-expanded="false" class="accordionItem s-3L_PBfp3fhj2"><svg width="20" height="20" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="s-3L_PBfp3fhj2"><path d="M9 5l7 7-7 7" class="s-3L_PBfp3fhj2"></path></svg> Heading 2</button> <!--<AccordionItem>--><button aria-expanded="false" class="accordionItem s-3L_PBfp3fhj2"><svg width="20" height="20" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="s-3L_PBfp3fhj2"><path d="M9 5l7 7-7 7" class="s-3L_PBfp3fhj2"></path></svg> Heading 3</button> <!--<AccordionItem>--></div>`;
+expect.extend(AxeMatchers);
+
+
+
+test("should demonstrate no issues with accessibility", async () => {
+  const render = () => AccordionHTML;
+  const result = render();
+
+  const results = await axe(result, {
+    rules: {
+      region: { enabled: false },
+    },
+  });
+
+  expect(results).toHaveNoViolations();
+});

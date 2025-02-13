@@ -1,0 +1,18 @@
+import { axe } from "vitest-axe";
+import * as AxeMatchers from "vitest-axe/matchers";
+
+const RadioButtonHTML = `<fieldset id="garnet" class="s-F2UExF4kPp6W"><div class="legend s-F2UExF4kPp6W" id="label-Legend">Legend</div> <input class="sr-only s-F2UExF4kPp6W" type="radio" id="armstrong-siddeley" role="radio" value="Armstrong-Siddeley"> <label for="armstrong-siddeley" class="s-F2UExF4kPp6W">Armstrong-Siddeley </label><input class="sr-only s-F2UExF4kPp6W" type="radio" id="jaguar-mark-ii" role="radio" value="Jaguar Mark II"> <label for="jaguar-mark-ii" class="s-F2UExF4kPp6W">Jaguar Mark II </label><input class="sr-only s-F2UExF4kPp6W" type="radio" id="ford-zephyr" role="radio" value="Ford Zephyr"> <label for="ford-zephyr" class="s-F2UExF4kPp6W">Ford Zephyr </label></fieldset>`;
+expect.extend(AxeMatchers);
+
+test("should demonstrate no issues with accessibility", async () => {
+  const render = () => RadioButtonHTML;
+  const result = render();
+
+  const results = await axe(result, {
+    rules: {
+      region: { enabled: false },
+    },
+   });
+
+  expect(results).toHaveNoViolations();
+});
