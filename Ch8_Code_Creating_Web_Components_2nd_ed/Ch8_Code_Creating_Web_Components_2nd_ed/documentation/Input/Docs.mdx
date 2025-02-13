@@ -1,0 +1,37 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import { ArgTypes } from "@storybook/blocks";
+import * as InputStories from "./Input.stories";
+
+<Meta of={InputStories} />
+
+# Input
+
+Input is the primary component. It has four possible states.
+
+- [Default](#text)
+- [No Label](#nolabel)
+- [Disabled Input](#disabledinput)
+
+## Text
+
+This is text for our text input field component
+
+<Canvas of={InputStories.Default} />
+
+## NoLabel
+
+This is to set or hide the label for the input field component
+
+<Canvas of={InputStories.NoLabel} />
+
+## DisabledInput
+
+This disables the component
+
+<Canvas of={InputStories.Disabled} />
+
+## Properties of component
+
+Below is a list of arguments available for this component:
+
+<ArgTypes of={InputStories} />

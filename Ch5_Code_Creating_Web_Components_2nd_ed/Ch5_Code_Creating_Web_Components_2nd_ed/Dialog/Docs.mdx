@@ -1,0 +1,30 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import * as DialogStories from "./Dialog.stories";
+
+<Meta of={DialogStories} />
+
+# Dialog
+
+Dialog is the primary component. It has one possible state.
+
+- [Default](#default)
+- [Closed On Open](#closedonopen)
+- [NoBackground](#nobackground)
+
+## Default
+
+This is the default state for the Dialog component:
+
+<Canvas of={DialogStories.Default} />
+
+## ClosedOnOpen
+
+This state shows the Dialog closed, when launched:
+
+<Canvas of={DialogStories.ClosedOnOpen} />
+
+## NoBackground
+
+This state shows the Dialog displayed without a background:
+
+<Canvas of={DialogStories.NoBackground} />

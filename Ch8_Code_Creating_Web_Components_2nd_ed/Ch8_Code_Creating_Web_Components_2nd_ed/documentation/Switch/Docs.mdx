@@ -1,0 +1,30 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import { ArgTypes } from "@storybook/blocks";
+import * as SwitchStories from "./Switch.stories";
+
+<Meta of={SwitchStories} />
+
+# Switch
+
+Switch is the primary component. It has 2 possible states.
+
+- [Default](#default)
+- [Disabled](#disabled)
+
+## Default
+
+This is the default state for our Switch component:
+
+<Canvas of={SwitchStories.Default} />
+
+## Disabled
+
+This is the disabled state for our Switch component:
+
+<Canvas of={SwitchStories.Disabled} />
+
+## Properties of component
+
+Below is a list of arguments available for this component:
+
+<ArgTypes of={SwitchStories} />

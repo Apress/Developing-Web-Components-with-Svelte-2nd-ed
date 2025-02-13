@@ -1,0 +1,32 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import { ArgTypes } from "@storybook/blocks";
+import * as TabsStories from "./Tabs.stories";
+
+<Meta of={TabsStories} />
+
+# Tabs
+
+Tabs is the primary component. It has two possible states.
+
+- [Default](#default)
+- [Vertical](#vertical)
+
+<a id="default" />
+
+## Default
+
+This is the default version of the Tabs component.
+
+<Canvas of={TabsStories.Default} />
+
+## Vertical
+
+This is the vertical version of the Tabs component.
+
+<Canvas of={TabsStories.Vertical} />
+
+## Properties of component
+
+Below is a list of arguments available for this component:
+
+<ArgTypes of={TabsStories} />

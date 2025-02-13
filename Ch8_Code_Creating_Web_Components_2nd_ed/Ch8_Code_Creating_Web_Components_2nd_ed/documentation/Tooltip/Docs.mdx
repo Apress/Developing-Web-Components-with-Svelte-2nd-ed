@@ -1,0 +1,34 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import { ArgTypes } from "@storybook/blocks";
+import * as TooltipStories from "./Tooltip.stories";
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+Tooltip is the primary component. It has two possible states.
+
+- [Default](#default)
+- [Custom HTML](#customhtml)
+
+<a id="default" />
+
+## Default
+
+This is the default version of the Tooltip component.
+
+<Canvas of={TooltipStories.Default} />
+
+<a id="customhtml" />
+
+## Custom HTML
+
+This variant allows us to display HTML in the Tooltip component.
+
+<Canvas of={TooltipStories.CustomHTML} />
+
+## Properties of component
+
+Below is a list of arguments available for this component:
+
+<ArgTypes of={TooltipStories} />

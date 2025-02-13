@@ -1,0 +1,43 @@
+import { Canvas, Meta } from "@storybook/addon-docs";
+import { ArgTypes } from "@storybook/blocks";
+import * as BreadcrumbsStories from "./Breadcrumbs.stories";
+
+<Meta of={BreadcrumbsStories} />
+
+# Breadcrumbs
+
+Breadcrumbs is the primary component. It has three possible states.
+
+- [Default](#default)
+- [CustomImage](#customimage)
+- [TextDivider](#textdivider)
+
+<a id="default" />
+
+## Default
+
+This is the default version of the Breadcrumbs component.
+
+<Canvas of={BreadcrumbsStories.Default} />
+
+<a id="customimage" />
+
+## CustomImage
+
+This version of the Breadcrumbs component displays an icon from the Iconify library.
+
+<Canvas of={BreadcrumbsStories.CustomImage} />
+
+<a id="textdivider" />
+
+## TextDivider
+
+This version of the Breadcrumbs component displays a text-based divider.
+
+<Canvas of={BreadcrumbsStories.TextDivider} />
+
+## Properties of component
+
+Below is a list of arguments available for this component:
+
+<ArgTypes of={BreadcrumbsStories} />

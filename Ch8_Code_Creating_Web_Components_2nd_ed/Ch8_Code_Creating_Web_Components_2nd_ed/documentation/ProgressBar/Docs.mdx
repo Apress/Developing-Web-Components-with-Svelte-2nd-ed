@@ -1,0 +1,30 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import { ArgTypes } from "@storybook/blocks";
+import * as ProgressBarStories from "./ProgressBar.stories";
+
+<Meta of={ProgressBarStories} />
+
+# ProgressBar
+
+ProgressBar is the primary component. It has two possible states.
+
+- [Default](#default)
+- [Label Outside](#labeloutside)
+
+## Default
+
+This is the default for our ProgressBar component
+
+<Canvas of={ProgressBarStories.Default} />
+
+## Label Outside
+
+This is set to show the label outside of the ProgressBar field component
+
+<Canvas of={ProgressBarStories.LabelOutside} />
+
+## Properties of component
+
+Below is a list of arguments available for this component:
+
+<ArgTypes of={ProgressBarStories} />

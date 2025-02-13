@@ -1,0 +1,23 @@
+import { Canvas, Meta } from "@storybook/addon-docs";
+import { ArgTypes } from "@storybook/blocks";
+import * as AccordionStories from "./Accordion.stories";
+
+<Meta of={AccordionStories} />
+
+# Accordion
+
+Button is the primary component. It has one possible state.
+
+- [Default](#default)
+
+## Default
+
+This is the default state for the Accordion component:
+
+<Canvas of={AccordionStories.Default} />
+
+## Properties of component
+
+Below is a list of arguments available for this component:
+
+<ArgTypes of={AccordionStories} />

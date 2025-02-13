@@ -1,0 +1,37 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import { ArgTypes } from "@storybook/blocks";
+import * as AlarmStories from "./Alarm.stories";
+
+<Meta of={AlarmStories} />
+
+# Alarm
+
+Alarm is the primary component. It has 3 possible states.
+
+- [Default](#default)
+- [Filled](#filled)
+- [Small](#small)
+
+## Default
+
+This is the default state for our Alarm component:
+
+<Canvas of={AlarmStories.Default} />
+
+## Filled
+
+This state shows the Alarm component with a filled icon:
+
+<Canvas of={AlarmStories.Filled} />
+
+## Small
+
+This state shows a smaller version of the Alarm component:
+
+<Canvas of={AlarmStories.Small} />
+
+## Properties of component
+
+Below is a list of arguments available for this component:
+
+<ArgTypes of={AlarmStories} />

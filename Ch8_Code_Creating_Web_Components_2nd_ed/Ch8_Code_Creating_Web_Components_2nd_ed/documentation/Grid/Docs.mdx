@@ -1,0 +1,43 @@
+import { Canvas, Meta } from "@storybook/addon-docs";
+import { ArgTypes } from "@storybook/blocks";
+import * as GridStories from "./Grid.stories";
+
+<Meta of={GridStories} />
+
+# Table
+
+Table is the primary component. It has three possible states.
+
+- [Default](#default)
+- [With Placeholder Images](#placeholder)
+- [With Images and Labels](#placeholderlabels)
+
+<a id="default" />
+
+## Default
+
+This is the default version of the Table component.
+
+<Canvas of={GridStories.Default} />
+
+<a id="placeholder" />
+
+## With Placeholder Images
+
+This variant shows the grid with placeholder images
+
+<Canvas of={GridStories.WithPlaceholderImages} />
+
+<a id="placeholderlabels" />
+
+## With Placeholder Images and Labels
+
+This variant shows the grid with placeholder images and labels
+
+<Canvas of={GridStories.WithImagesAndLabels} />
+
+## Properties of component
+
+Below is a list of arguments available for this component:
+
+<ArgTypes of={GridStories} />

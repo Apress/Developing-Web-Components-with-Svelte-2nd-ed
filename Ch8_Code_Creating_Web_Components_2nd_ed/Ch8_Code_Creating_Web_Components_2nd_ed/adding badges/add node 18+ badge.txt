@@ -1,0 +1,20 @@
+badgesConfig: {
+  "Node 18+":{
+    title: "Node 18+",
+      styles: {
+        backgroundColor: "#b1b1ff",
+        borderColor: "#3b3bff",
+        color: "#000000",
+      },
+    },
+  },
+},
+
+
+const BADGES = {
+  ...BADGE,
+  NODE18PLUS: "Node 18+",
+};
+
+
+CustomImage.parameters = { badges: [BADGES.NODE18PLUS] };

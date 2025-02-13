@@ -1,0 +1,37 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import { ArgTypes } from "@storybook/blocks";
+import * as AlertStories from "./Alert.stories";
+
+<Meta of={AlertStories} />
+
+# Alert
+
+Alert is the primary component. It has three possible states.
+
+- [Default](#default)
+- [Warn](#warn)
+- [Error](#error)
+
+## Default
+
+This is the default state for the Alert component - it shows an information message:
+
+<Canvas of={AlertStories.Default} />
+
+## Warn
+
+This is the warning state for the Alert component - it shows a warning message:
+
+<Canvas of={AlertStories.Warn} />
+
+## Error
+
+This is the error state for the Alert component - it shows an error message:
+
+<Canvas of={AlertStories.Error} />
+
+## Properties of component
+
+Below is a list of arguments available for this component:
+
+<ArgTypes of={AlertStories} />

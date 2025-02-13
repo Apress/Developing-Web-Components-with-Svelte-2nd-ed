@@ -1,0 +1,30 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import { ArgTypes } from "@storybook/blocks";
+import * as SpinnerStories from "./Spinner.stories";
+
+<Meta of={SpinnerStories} />
+
+# Spinner
+
+Spinner is the primary component. It has 2 possible states.
+
+- [Circle](#default)
+- [Jumper](#disabled)
+
+## Circle
+
+This is the default state for our Spinner component:
+
+<Canvas of={SpinnerStories.Circle} />
+
+## Jumper
+
+This is the Spinner component set as a Jumper:
+
+<Canvas of={SpinnerStories.Jumper} />
+
+## Properties of component
+
+Below is a list of arguments available for this component:
+
+<ArgTypes of={SpinnerStories} />

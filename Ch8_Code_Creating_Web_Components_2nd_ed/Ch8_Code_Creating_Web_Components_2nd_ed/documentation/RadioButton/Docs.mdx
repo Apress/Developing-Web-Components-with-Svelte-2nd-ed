@@ -1,0 +1,30 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import { ArgTypes } from "@storybook/blocks";
+import * as RadioButtonStories from "./RadioButton.stories";
+
+<Meta of={RadioButtonStories} />
+
+# RadioButton
+
+RadioButton is the primary component. It has 1 possible states.
+
+- [Default](#default)
+- [Disabled](#disabled)
+
+## Default
+
+This is the default state for our RadioButton component:
+
+<Canvas of={RadioButtonStories.Default} />
+
+## Disabled
+
+This is the checkbox component in a disabled state:
+
+<Canvas of={RadioButtonStories.Disabled} />
+
+## Properties of component
+
+Below is a list of arguments available for this component:
+
+<ArgTypes of={RadioButtonStories} />
